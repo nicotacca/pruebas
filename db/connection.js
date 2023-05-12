@@ -1,20 +1,23 @@
-
 // toda la data en https://www.npmjs.com/package/mssql
 
 const sql = require('mssql')
 
+
+/* user: 'sa',
+password: 'nico1993' */
+
 const sqlConfig = {
-  user: 'sa',
-  password: 'nico1993',
+  user: 'Crrconsultas',
+  password: 'Resistencia34',
   database: 'BaseResistencia',
-  server: 'localhost',
+  server: '192.168.1.4',
   pool: {
     max: 10,
     min: 0,
     idleTimeoutMillis: 30000
   },
   options: {
-    encrypt: true, // for azure
+    encrypt: false, // for azure
     trustServerCertificate: true // change to true for local dev / self-signed certs
   }
 }
@@ -25,6 +28,7 @@ async function getConnection() {
  try {
 
   const pool = await sql.connect(sqlConfig)
+  console.log('POOL DB CONECTADA AMIGO')
   return pool
 
  } catch (err) {
@@ -32,5 +36,5 @@ async function getConnection() {
  }
 };
 
-module.exports = {getConnection}
+module.exports = { getConnection }
 
