@@ -28,7 +28,7 @@ async function getConnection() {
  try {
 
   const pool = await sql.connect(sqlConfig)
-  console.log('POOL DB CONECTADA AMIGO')
+  //console.log('POOL DB CONECTADA AMIGO')
   return pool
 
  } catch (err) {

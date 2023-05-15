@@ -59,5 +59,3 @@ routerApi(app);
 app.listen(port, () => {
   console.log(`MI EXPRESS CORRIENDO EN PUERTO ${port}`);
 });
-
-console.log(process.env.PORT)
